@@ -94,7 +94,6 @@ client.on("message", function(message) {
 	if(message.author.bot) return;
 	if(message.content.indexOf(prefix) !== 0) return;
 
-
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	switch (args[0].toLowerCase()) {
@@ -103,14 +102,5 @@ client.on("message", function(message) {
     message.delete().catch(O_o=>{});
     message.channel.send(sayMessage);
     break;
-
-
-
-
-
-
-
-    default:
-        message.channel.sendMessage("```md\n[1]: Invalid Command...```");
 	}
 });
