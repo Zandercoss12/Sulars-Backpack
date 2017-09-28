@@ -15,8 +15,7 @@ var fortunes = [
   "**ZanderBot says**\n```fix\nNever in a million years.```"
 ];
 
-var facts = [
-  "School is cool",
+var facts = ["School is cool",
   "Tacos are the best!",
   "Everything I say is most-likely ~~not~~ true",
   "Burritos are bad",
