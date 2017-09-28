@@ -90,7 +90,7 @@ client.on("guildMemberAdd", function(member) {
   member.addRole(member.guild.roles.find("name", "Member"));
 });
 
-client.on("message", async message => {
+bot.on("message", function(message) {
 	if(message.author.bot) return;
 	if(message.content.indexOf(prefix) !== 0) return;
 
