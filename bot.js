@@ -105,7 +105,7 @@ client.on("message", function(message) {
     		return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
     		const fetched = await message.channel.fetchMessages({count: deleteCount});
     		message.channel.bulkdelete(fetched)
-    		.catch(error => message.reply(`Couldn\'t delete messages because of: ${error}`));
+    		.catch(error => message.reply('Couldn\'t delete messages because of: ${error}'));
    		 break;
 	}
 
