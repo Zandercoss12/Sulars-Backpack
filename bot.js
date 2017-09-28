@@ -1,6 +1,6 @@
 const Discord = require('discord.js');
 const client = new Discord.Client();
-const config = require("./config.json");
+var prefix = '-+';
 
 var fortunes = [
   "**ZanderBot says**\n```css\nYes```",
@@ -78,8 +78,8 @@ var facts = ["Don\'t touch me!!!",
   "Our ultimate goal is to make as many people as sad as possible when we die.",
   "The best item to protect you from sasquatch attacks is a camera.",
   "If someone farts at a poker tournament, no one will ever know who did it."];
-  
-client.on('ready', () => {
+
+  client.on('ready', () => {
   client.user.setPresence({game: {name: "-+help", type: 0}});
   console.log('I am ready!');
 });
@@ -88,6 +88,25 @@ client.on("guildMemberAdd", function(member) {
   member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome taco brethren!");
   
   member.addRole(member.guild.roles.find("name", "Member"));
+});
+
+client.on("message", function(message) {
+	if(message.author.bot) return;
+	if(message.content.indexOf(prefix) !== 0) return;
+
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+
+	switch (args[0].toLowerCase()) {
+		case "say":
+		const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
+    break;
+
+
+    default:
+    message.channel.sendMessage("```md\n[1]: Invalid Command```");
+	}
 });
 
 client.login(process.env.BOT_TOKEN);
