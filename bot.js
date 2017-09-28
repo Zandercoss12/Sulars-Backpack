@@ -89,5 +89,13 @@ client.on('ready', () => {
   console.log('I am ready!');
 });
 
+client.on("guildMemberAdd", function(member) {
+  member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome taco brethren!");
+  
+  member.addRole(member.guild.roles.find("name", "Member"));
+});
+
+
+
 client.login(process.env.BOT_TOKEN);
 
