@@ -91,16 +91,6 @@ client.on("guildMemberAdd", function(member) {
 });
 
 client.on("message", function(message) {
-	if(message.author.bot) return;
-	if(message.content.indexOf(prefix) !== 0) return;
+	
 
-	const args = message.content.slice(prefix.length).trim().split(/ +/g);
-
-	switch (args[0].toLowerCase()) {
-		case "say":
-		const sayMessage = args.join(" ");
-    message.delete().catch(O_o=>{});
-    message.channel.send(sayMessage);
-    break;
-	}
 });
