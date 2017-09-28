@@ -87,7 +87,7 @@ var facts = [
   ];
   
 client.on('ready', () => {
-  client.user.setPresence({game: {name: "-+help for commands!", type: 0}});
+  client.user.setPresence({game: {name: "-+help", type: 0}});
   console.log('I am ready!');
 });
 
