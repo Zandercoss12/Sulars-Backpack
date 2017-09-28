@@ -80,7 +80,7 @@ var facts = ["Don\'t touch me!!!",
   "If someone farts at a poker tournament, no one will ever know who did it."];
 
   client.on('ready', () => {
-  client.user.setPresence({game: {name: "-+help", type: 0}});
+  client.user.setPresence({game: {name: "-+help for commands!", type: 0}});
   console.log('I am ready!');
 });
 
