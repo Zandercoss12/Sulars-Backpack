@@ -94,7 +94,7 @@ client.on("message", function(message) {
 	if(message.author.bot) return;
   if(message.content.indexOf(prefix) !== 0) return;
 
-  var args = message.content.substring().split(" ");
+  const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
 
   switch (args[0].toLowerCase()) {
   	case "say":
