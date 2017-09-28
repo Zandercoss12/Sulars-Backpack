@@ -99,13 +99,8 @@ client.on("message", function(message) {
 	var args = message.content.substring(prefix.length).split(" ");
 
 	switch (args[0].toLowerCase()) {
-		case "purgescreen":
-		    const deleteCount = parseInt(args[0], 10);
-    		if(!deleteCount || deleteCount < 1 || deleteCount > 1)
-    		return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
-    		const fetched = await message.channel.fetchMessages({count: deleteCount});
-    		message.channel.bulkdelete(fetched)
-    		.catch(error => message.reply('Couldn\'t delete messages because of: ${error}'));
+		case "tacos":
+			message.channel.sendMessage("```fix\nTACOS R DA BEST```");
    		 break;
 	}
 
