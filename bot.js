@@ -91,7 +91,7 @@ client.on("guildMemberAdd", function(member) {
 });
 
 client.on("message", async message => {
-  if(message.author.client) return;
+  if(message.author.bot) return;
   if(message.content.indexOf(prefix) !== 0) return;
   
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
@@ -109,7 +109,7 @@ client.on("message", async message => {
     return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
     const fetched = await message.channel.fetchMessages({count: deleteCount});
     message.channel.bulkdelete(fetched)
-    .catch(error => message.reply("Couldn\'t delete messages because of: ${error}"));
+    .catch(error => message.reply(`Couldn\'t delete messages because of: ${error}`));
   }
 
   if(command === "tacos") {
