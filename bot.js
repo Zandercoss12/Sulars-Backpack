@@ -99,7 +99,6 @@ client.on("guildMemberAdd", function(member) {
 
 client.on("message", async message => {
   if(message.author.client) return;
-  
   if(message.content.indexOf(prefix) !== 0) return;
   
   const args = message.content.slice(prefix.length).trim().split(/ +/g);
