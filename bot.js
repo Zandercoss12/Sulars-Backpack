@@ -90,28 +90,28 @@ client.on("guildMemberAdd", function(member) {
   member.addRole(member.guild.roles.find("name", "Member"));
 });
 
-bot.on("message", function(message) {
+client.on("message", function(message) {
 	if(message.author.bot) return;
 	if(message.content.indexOf(prefix) !== 0) return;
 
 
-	var args = message.content.substring(PREFIX.length).split(" ");
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 
 	switch (args[0].toLowerCase()) {
 		case "say":
 		const sayMessage = args.join(" ");
-  	 	 message.delete().catch(O_o=>{});
-  		message.channel.send(sayMessage);
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
     break;
 
     	case "purgescreen":
     	const deleteCount = parseInt(args[0], 10);
-	   	 if(!deleteCount || deleteCount < 1 || deleteCount > 1)
-	   	 return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
-	   	 const fetched = await message.channel.fetchMessages({count: deleteCount});
-    	message.channel.bulkdelete(fetched)
-   	 .catch(error => message.reply(`Couldn\'t delete messages because of: ${error}`));
-  	break;
+    if(!deleteCount || deleteCount < 1 || deleteCount > 1)
+    return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
+    const fetched = await message.channel.fetchMessages({count: deleteCount});
+    message.channel.bulkdelete(fetched)
+    .catch(error => message.reply(`Couldn\'t delete messages because of: ${error}`));
+    break;
 
 
 
