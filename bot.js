@@ -146,8 +146,7 @@ client.on("message", async message => {
   }
 
   if(command === "dumbinfo") {
-    var resultFacts = Math.floor((Math.random() * facts.length) + 0);
-    client.reply(message, facts[resultFacts]);
+    message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
   }
 
   if(command === "apply") {
