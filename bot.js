@@ -90,10 +90,4 @@ client.on("guildMemberAdd", function(member) {
   member.addRole(member.guild.roles.find("name", "Member"));
 });
 
-client.on("message", async message => {
-
-
-  
-});
-
 client.login(process.env.BOT_TOKEN);
