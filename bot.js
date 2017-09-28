@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
-var prefix = "-+";
+const prefix = "-+";
 const client = new Discord.Client();
+
 var fortunes = [
   "**ZanderBot says**\n```css\nYes```",
   "**ZanderBot says**\n```fix\nNo```",
