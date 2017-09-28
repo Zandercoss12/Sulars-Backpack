@@ -94,7 +94,22 @@ client.on("guildMemberAdd", function(member) {
   member.addRole(member.guild.roles.find("name", "Member"));
 });
 
-
+client.on("message", async message => {
+  if(message.author.client) return;
+  
+  if(message.content.indexOf(prefix) !== 0) return;
+  
+  const args = message.content.slice(prefix.length).trim().split(/ +/g);
+  const command = args.shift().toLowerCase();
+  
+  if(command === "say") {
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
+  }
+  
+  
+});
 
 client.login(process.env.BOT_TOKEN);
 
