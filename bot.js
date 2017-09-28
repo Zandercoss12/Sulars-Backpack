@@ -79,5 +79,10 @@ var facts = ["Don\'t touch me!!!",
   "The best item to protect you from sasquatch attacks is a camera.",
   "If someone farts at a poker tournament, no one will ever know who did it."];
 
+client.on('ready', () => {
+  client.user.setPresence({game: {name: "-+help", type: 0}});
+  console.log('I am ready!');
+});
+
 client.login(process.env.BOT_TOKEN);
 
