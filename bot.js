@@ -85,7 +85,7 @@ var facts = ["School is cool",
 ];
 
 client.on('ready', () => {
-  client.user.setPresence({status:'online',game:{name:'-+help for commands!'}});
+  client.user.setPresence({game: {name: "-+help for commands!", type: 0}});
   console.log('I am ready!');
 });
 
