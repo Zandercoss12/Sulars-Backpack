@@ -104,7 +104,7 @@ client.on("message", function(message) {
    		 break;
    		case "8ball":
    		if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
-    	else message.channel.sendMessage("```diff\n- I do not understand```");
+       else message.channel.sendMessage("```diff\n- I do not understand```");
     	break;
 	}
 
