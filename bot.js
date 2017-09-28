@@ -84,5 +84,10 @@ var facts = ["School is cool",
                                               "If someone farts at a poker tournament, no one will ever know who did it."
 ];
 
+client.on('ready', () => {
+  client.user.setPresence({status:'online',game:{name:'-+help for commands!'}});
+  console.log('I am ready!');
+});
+
 client.login(process.env.BOT_TOKEN);
 
