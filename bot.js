@@ -133,7 +133,11 @@ client.on("message", async message => {
   if(command === "dumbinfo") {
     message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
   }
-
+  
+if(command === "Honey, where's my super suit") {
+    message.channel.sendMessage(supersuit[Math.floor(Math.random() * supersuit.length)]);
+  }
+  
   if(command === "apply") {
     message.channel.sendMessage("**https://goo.gl/forms/bA35MvXEeP0o3z6z1 \n**Click this link to have fun answering a survey and stuff!**");
   }
