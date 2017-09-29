@@ -15,7 +15,8 @@ var fortunes = [
   "**ZanderBot says**\n```fix\nNever in a million years.```"
 ];
 
-var facts = ["Don\'t touch me!!!",
+var facts = [
+  "Don\'t touch me!!!",
   "TACOZ",
   "Scientists have proven that buildings can\'t jump.",
   "A lethal dose is a lifetime supply.",
@@ -77,7 +78,8 @@ var facts = ["Don\'t touch me!!!",
   "A bed is a shelf for your body when you\'re not using it.",
   "Our ultimate goal is to make as many people as sad as possible when we die.",
   "The best item to protect you from sasquatch attacks is a camera.",
-  "If someone farts at a poker tournament, no one will ever know who did it."];
+  "If someone farts at a poker tournament, no one will ever know who did it."
+];
   
 client.on('ready', () => {
   client.user.setPresence({game: {name: "-+help for commands!", type: 0}});
