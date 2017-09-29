@@ -2,6 +2,13 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
+var supersuit = [
+  "https://tenor.com/xsfp.gif",
+  "https://tenor.com/Ew24.gif",
+  "https://tenor.com/N0eT.gif",
+  "https://tenor.com/Ew24.gif"
+];
+
 var fortunes = [
   "**ZanderBot says**\n```css\nYes```",
   "**ZanderBot says**\n```fix\nNo```",
