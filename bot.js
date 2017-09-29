@@ -131,8 +131,7 @@ client.on("message", async message => {
   }
 
   if(command === "dumbinfo") {
-    var result = Math.floor((Math.random() * facts.length) + 0);
-      bot.reply(message, facts[result]);
+    message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
   }
 
   if(command === "apply") {
