@@ -141,7 +141,7 @@ client.on("message", async message => {
     message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
   }
   
-if(command === "Where's-my-super-suit") {
+  if(command === "Supersuit") {
     message.channel.sendMessage(supersuit[Math.floor(Math.random() * supersuit.length)]);
   }
   
