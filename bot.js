@@ -65,7 +65,7 @@ var facts = [
   "If you were to move all the matter in the universe into one corner, no one would have any personal space.",
   "Imagine if we took every elephant in the world and laid them end-to-end into space... Did you know that all the elephants would die?",
   "In Denmark, you can buy groceries at the grocery store!",
-  "An average person has approximately a 0% change of turning into a rhino next year.",
+  "An average person has approximately a 0% chance of turning into a rhino next year.",
   "Your sister is a girl.",
   "If you are a non-smoker, you will die anyways.",
   "Friends are like cows, if you eat them, they die.",
