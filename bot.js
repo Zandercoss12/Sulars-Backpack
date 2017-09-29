@@ -105,15 +105,6 @@ client.on("message", async message => {
     message.channel.send(sayMessage);
   }
 
-  if(command === "purgescreen") {
-    const deleteCount = parseInt(args[0], 10);
-    if(!deleteCount || deleteCount < 1 || deleteCount > 1)
-    return message.reply("Do -+purgescreen 1 and it\'ll delete everything onscreen.");
-    const fetched = await message.channel.fetchMessages({count: deleteCount});
-    message.channel.bulkdelete(fetched)
-    .catch(error => message.reply('Couldn\'t delete messages because of: ${error}'));
-  }
-
   if(command === "tacos") {
     message.channel.sendMessage("```fix\nTACOS R DA BEST```");
   }
@@ -140,7 +131,8 @@ client.on("message", async message => {
   }
 
   if(command === "dumbinfo") {
-    message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
+    var result = Math.floor((Math.random() * facts.length) + 0);
+      bot.reply(message, facts[result]);
   }
 
   if(command === "apply") {
