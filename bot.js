@@ -6,7 +6,8 @@ var supersuit = [
   "https://tenor.com/xsfp.gif",
   "https://tenor.com/Ew24.gif",
   "https://tenor.com/N0eT.gif",
-  "https://tenor.com/Ew24.gif"
+  "https://tenor.com/Ew24.gif",
+  "https://tenor.com/wjn3.gif"
 ];
 
 var fortunes = [
