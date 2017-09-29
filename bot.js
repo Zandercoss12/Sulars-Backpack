@@ -133,7 +133,7 @@ client.on("message", async message => {
   }
 
   if(command === "help") {
-    message.author.sendMessage("```md\n|--------<Commands>--------|\n[1]: help - gives you help menu (this one).\n[2]: 8ball <message> - Replies \"yes\" or \"no\" in response to your question.\n[3]: info - information about the bot.\n[4]: tacos,\n[5]: dumbinfo - gives dumb information that may or may not be helpful.\n[6]: purgescreen 1 - deletes all the text on screen.\n[7]: say <message> - says what the player tells the bot to say.\n[8]: apply - Survey just for fun, you don\'t apply to anything.\n|--------<Commands>-------|``` **Always start your commands with -+**");
+    message.author.sendMessage("```md\n|--------<Commands>--------|\n[1]: help - gives you help menu (this one).\n[2]: 8ball <message> - Replies \"yes\" or \"no\" in response to your question.\n[3]: info - information about the bot.\n[4]: tacos,\n[5]: dumbinfo - gives dumb information that may or may not be helpful.\n[6]: purgescreen 1 - deletes all the text on screen.\n[7]: say <message> - says what the player tells the bot to say.\n[8]: apply - Survey just for fun, you don\'t apply to anything.\n[9]: Where\'s-my-super-suit\n|--------<Commands>-------|``` **Always start your commands with -+**");
     message.channel.sendMessage("**I just messaged you the commands, go check your direct messages!**");
   }
 
