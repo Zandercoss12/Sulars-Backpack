@@ -147,7 +147,7 @@ client.on("message", async message => {
   }
   
   if(command === "apply") {
-    message.channel.sendMessage("**https://goo.gl/forms/bA35MvXEeP0o3z6z1 \n**Click this link to have fun answering a survey and stuff!**");
+    message.channel.sendMessage("**https://goo.gl/forms/KHuSDlTG2QI3t7FG3 \n**Click this link to have fun answering a survey and stuff!**");
   }
 });
 
