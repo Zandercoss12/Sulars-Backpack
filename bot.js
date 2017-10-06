@@ -2,82 +2,101 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const config = require("./config.json");
 
-// Variables //
-var wall = [
-	"https://tenor.com/view/donald-trump-wall-mexico-donald-wall-trump-gif-7202198",
-	"https://tenor.com/view/donald-trump-wall-solution-illegal-immigration-mexico-gif-4968392",
-	"https://tenor.com/view/trump-wall-businessman-donald-gif-5172528",
-	"https://tenor.com/view/trump-trump-wall-gif-7230709",
-	"https://tenor.com/view/elections-wall-trump-clinton-election-electiona-gif-7105455",
-	"https://tenor.com/view/trump-donald-trump-build-awall-lets-build-awall-great-wall-of-china-gif-5619514",
-	"https://orig00.deviantart.net/4857/f/2016/106/8/7/attack_on_trump_s_wall_by_capitalistguy-d9z40be.jpg",
-	"https://i.imgflip.com/1vgxg5.jpg",
-	"http://www.mypokecard.com/my/galery/hyGtyG01kmTh.jpg",
-	"http://pm1.narvii.com/6084/e5c5e88137c9b5450a63851f9b10504b05b9673c_hq.jpg"
+var supersuit = [
+  "https://tenor.com/xsfp.gif",
+  "https://tenor.com/Ew24.gif",
+  "https://tenor.com/N0eT.gif",
+  "https://tenor.com/Ew24.gif",
+  "https://tenor.com/wjn3.gif"
 ];
 
-var memes = [
-	"https://tenor.com/view/donald-trump-derp-gif-4833371",
-	"https://tenor.com/view/donald-trump-really-oh-really-well-gif-7605661",
-	"https://tenor.com/view/trump-dance-wiggle-leotard-face-edit-gif-4958416",
-	"https://tenor.com/view/donald-trump-donaldtrump-bye-obama-gif-7555548",
-	"https://tenor.com/view/wrong-donald-trump-gif-8471142",
-	"https://tenor.com/view/trump-donald-trump-dance-thinking-idk-gif-5753267",
-	"https://tenor.com/view/deneldtremp-deneld-lel-donald-trump-gif-5126134",
-	"https://tenor.com/view/trump-sombrero-gif-5784650",
-	"https://tenor.com/view/bye-donald-trump-gif-5648885",
-	"https://tenor.com/view/trump-tard-mocking-crazy-gif-4740101",
-	"https://media.tenor.com/images/3ff850ba2ca92fbd1e6e70c45c4d4e8f/tenor.gif",
-	"https://tenor.com/view/donaldtrump-trump-dance-gif-4531450",
-	"https://tenor.com/view/trump-transformation-bird-funny-gif-5980736",
-	"https://tenor.com/view/trump-clinton-godzilla-fight-lol-gif-5735153",
-	"https://tenor.com/view/donaldtrump-trump-angry-fish-gif-4531436",
-	"https://tenor.com/view/president-donald-trump-draws-executive-gif-7866911",
-	"https://tenor.com/view/trump-pope-trumpope-gif-8709177",
-	"https://tenor.com/view/trump-manson-gif-7301999",
-	"https://tenor.com/view/trump-sad-sad-day-gif-7870267",
-	"https://tenor.com/view/president-donald-trump-executive-order-gif-7904210",
-	"https://tenor.com/view/donald-trump-president-trump-white-house-press-conference-dance-dancing-gif-7808989",
-	"https://tenor.com/view/president-donald-trump-draws-executive-gif-7877566",
-	"https://cbsnews1.cbsistatic.com/hub/i/r/2017/02/10/3ebc5ba8-a46c-4bc3-82a2-d060a0445724/crop/455x459+0+0/resize/620x465/64360f0876156abd6bcf80fe487663a6/screen-shot-2017-02-10-at-1-56-56-pm.png",
-	"https://cdn.pastemagazine.com/www/system/images/photo_albums/trump-memes/large/mxekeuk.png?1384968217",
-	"https://factsempire.com/wp-content/uploads/2016/11/52.jpg",
-	"https://static.pizzabottle.com/wp-content/uploads/2017/05/b052c14cc9b8c299507a412e9c24dcf5_-donald-trump-memes-and-trump-memes_540-244.jpeg",
-	"http://i0.kym-cdn.com/photos/images/original/001/077/512/21c.jpg",
-	"https://i.pinimg.com/736x/45/ba/99/45ba990dff5774ad83f889f925ba8877--memes-donald-trump-donald-trump-hair.jpg",
-	"https://rekordnorth.co.za/wp-content/uploads/sites/86/2016/11/trump-meme-14.jpg",
-	"http://www.telegraph.co.uk/content/dam/news/2017/02/01/Donald-Trump-draw-memes-xlarge_trans_NvBQzQNjv4BqpJliwavx4coWFCaEkEsb3kvxIt-lGGWCWqwLa_RXJU8.PNG",
-	"https://static.boredpanda.com/blog/wp-content/uploads/2017/02/trump-executive-order-memes-5-58919d4088ef2__605.gif",
-	"https://www.dailydot.com/wp-content/uploads/772/0b/trumpgenders.jpg",
-	"https://i.amz.mshcdn.com/19BmfT0AGtWXKkt7Bw0a3J7IaIs=/fit-in/1200x9600/https%3A%2F%2Fblueprint-api-production.s3.amazonaws.com%2Fuploads%2Fcard%2Fimage%2F367863%2Fbd33f68b-dc93-43f1-95de-9a53d40bca41.jpg",
-	"http://www.thehookmag.com/wp-content/uploads/2017/02/harambe.jpg",
-	"https://nyoobserver.files.wordpress.com/2017/01/capture-345.png",
-	"https://static.boredpanda.com/blog/wp-content/uploads/2017/02/trump-executive-order-memes-20-5891a7507891d__605.gif",
-	"https://i.imgflip.com/1iddna.jpg",
-	"http://i0.kym-cdn.com/photos/images/original/001/214/707/813.jpg",
-	"http://i0.kym-cdn.com/photos/images/original/001/215/175/021.jpg",
-	"http://i0.kym-cdn.com/photos/images/facebook/001/222/871/24e.png_large",
-	"http://i0.kym-cdn.com/photos/images/facebook/001/215/208/2c8.jpg",
-	"http://i0.kym-cdn.com/photos/images/original/001/214/698/4c8"
-];
-	
 var fortunes = [
-	"Yes, if you build a wall.",
-	"No,",
-	"It's not possible",
-	"It might be possible.",
-	"No - the wall isn't finished.",
-	"Yes,",
-	"Yes - the wall is finished.",
-	"Can you ask again?"
+  "**ZanderBot says**\n```css\nYes```",
+  "**ZanderBot says**\n```fix\nNo```",
+  "**ZanderBot says**\n```fix\nhm? Did you say something?```",
+  "**ZanderBot says**\n```css\nYes```",
+  "**ZanderBot says**\n```fix\nNo```",
+  "**ZanderBot says**\n```css\nMaybe so...```",
+  "**ZanderBot says**\n```fix\nI do not think so.```",
+  "**ZanderBot says**\n```css\nThe world may never know...```",
+  "**ZanderBot says**\n```fix\nNever in a million years.```",
+  "**ZanderBot says**\n```fix\nYou may rely on it.```"
 ];
 
+var facts = [
+  "Don\'t touch me!!!",
+  "TACOZ",
+  "Scientists have proven that buildings can\'t jump.",
+  "A lethal dose is a lifetime supply.",
+  "School is fun (in a million years)",
+  "Music is enjoyable.",
+  "My name is ZanderBot.",
+  "Zandercross12 created me.",
+  "What I said last was a lie?",
+  "Doing drugs hurts you gradually.",
+  "Don\'t text and drive.",
+  "If you build an elevator to mars, the elevator would break.",
+  "If you were to drop an ant from the highest height, it would not die.",
+  "If you jump, you go up.",
+  "If you fall from a very tall height, you may die.",
+  "I was programmed to say this stuff.",
+  "The line of paint on the road holds more authority than I ever will.",
+  "H.O.M.E.W.O.R.K. = Half Of My Energy Wasted On Random Knowledge.",
+  "Thing to to in public - Scream at someone, \"You\'re one of them!\" Back away slowly.",
+  "Thing to do in public - Look at someone through the glass and say, \"Wow I\'m hideous!\"",
+  "Thing to do in public - Find a child, tell them you\'re him/her from the future.",
+  "Thing to do in public - Go to Petsmart and buy birdseed, ask how long it will take for the birds to grow.",
+  "Thing to do in public - Throw a plastic ball at someone and yell, \"Get in your ball you stupid Pokemon!\"",
+  "Thing to do in public - When the money comes out of the ATM, scream, \"I won!, I won!, I won!\"",
+  "Thing to do in public - Bring a desk into an elevator, ask people if they have an appointment.",
+  "Thing to do in public - Fill empty bottle of windex with blue gatorade, drink then double over in pain.",
+  "Thing to do in public - Walk into Sea World with a fishing pole.",
+  "Thing to do in public - Go up to random people at the mall, hold up your ID, and yell \"HAVE YOU SEEN THIS MAN\"",
+  "If you\'re stressed, just remember, it\'s just desserts spelled backwards.",
+  "People who are goodlooking but have terrible personalities are basically real life clickbaits.",
+  "It\'s crazy there\'s this giant thing in the sky in the sky all the time that we\'re not supposed to look at.",
+  "Wizards smoke out of long pipes so they do not risk setting their beards on fire.",
+  "If you go to jail for tax evasion, you\'re living off of taxes as a result of not paying taxes.",
+  "Whenever I mess up bad, I just remember that somewhere, an ant just brought borax laced food back to his queen and killed his entire family.",
+  "My dog understands several human words. I don\'t understand any dog barks. He may be smarter than me.",
+  "Girl scouts is basically a brand-name cookie company that gets away with child labor.",
+  "I\'ve woken up a 10,000 times, and I\'m still not used to it.",
+  "The entire purpose of the bayonet is to bring a knife to a gun fight.",
+  "I think we should all take a moment and be grateful our bodies don\'t poo while we\'re asleep.",
+  "The word \"Fat\" just looks like someone took a bite out of the first letter of the word \"Eat\"",
+  "If you took all of the blood vessels out of an average child, and laid them out in one line, you\'d be charged with murder.",
+  "If you took all of the gold and made it into a cube, you\'d be the only one on Earth with any gold.",
+  "If the human population held hands around the equator, a significant portion of them would drown.",
+  "Every 60 seconds in Africa... One minute passes.",
+  "If you stacked all the $1 bills in circulation, the stack would quickly become unstable and fall over.",
+  "If you weighed all the ants in the world, numerous ecosystems would be disturbed...",
+  "If you were to move all the matter in the universe into one corner, no one would have any personal space.",
+  "Imagine if we took every elephant in the world and laid them end-to-end into space... Did you know that all the elephants would die?",
+  "In Denmark, you can buy groceries at the grocery store!",
+  "An average person has approximately a 0% chance of turning into a rhino next year.",
+  "Your sister is a girl.",
+  "If you are a non-smoker, you will die anyways.",
+  "Friends are like cows, if you eat them, they die.",
+  "You know it\'s cold outside when you go outside and it\'s cold.",
+  "Recent studies show that if you attempt to swim in lava, you may die.",
+  "Baby sitters don\'t actually sit on babies.",
+  "Brushing your teeth is the only time you clean your skeleton.",
+  "People think it\'s crazy that an elephant can be scared by a mouse, but so many people are scared of small things like insects.",
+  "Of all the bodily functions that could be contagious, thank god it\'s a yawn.",
+  "A bed is a shelf for your body when you\'re not using it.",
+  "Our ultimate goal is to make as many people as sad as possible when we die.",
+  "The best item to protect you from sasquatch attacks is a camera.",
+  "If someone farts at a poker tournament, no one will ever know who did it."
+];
+  
 client.on('ready', () => {
-  client.user.setPresence({game: {name: "~Thelp for commands!", type: 0}});
+  client.user.setPresence({game: {name: "-+help for commands!", type: 0}});
   console.log('I am ready!');
 });
 
 client.on("guildMemberAdd", function(member) {
+  member.guild.channels.find("name", "general").sendMessage(member.toString() + " Welcome taco brethren!");
+  
   member.addRole(member.guild.roles.find("name", "Member"));
 });
 
@@ -88,36 +107,54 @@ client.on("message", async message => {
   const args = message.content.slice(config.prefix.length).trim().split(/ +/g);
   const command = args.shift().toLowerCase();
   
-  if(command === "info") {
-  	var embed = new Discord.RichEmbed()
-  	.setThumbnail(message.client.avatarURL)
-  	.addField("What I am", "A bot.")
-  	.addField("What I do", "Build Walls")
-  	.addField("Am I a good bot?", "no")
-  	.setColor(0x00FFFF)
-  	message.channel.sendEmbed(embed);
+  if(command === "say") {
+    const sayMessage = args.join(" ");
+    message.delete().catch(O_o=>{});
+    message.channel.send(sayMessage);
   }
 
-  if(command === "wall") {
-  	message.channel.sendMessage(wall[Math.floor(Math.random() * wall.length)]);
-  }
-
-  if(command === "trumpmemes") {
-  	message.channel.sendMessage(memes[Math.floor(Math.random() * memes.length)]);
+  if(command === "tacos") {
+    message.channel.sendMessage("```fix\nTACOS R DA BEST```");
   }
 
   if(command === "8ball") {
-  	if (args[1]) message.channel.sendMessages(fortunes[Math.floor(Math.random() * fortunes.length)]);
-  	else message.channel.sendMessage("```diff\n- I do not understand```");
+     if (args[1]) message.channel.sendMessage(fortunes[Math.floor(Math.random() * fortunes.length)]);
+    else message.channel.sendMessage("```diff\n- I do not understand```");
   }
 
-  setInterval(() => {
+  if(command === "info") {
+    var embed = new Discord.RichEmbed()
+      .setThumbnail(message.author.avatarURL)
+      .addField("What I am", "I am a bot created by: Zandercros12!", true)
+      .addField("This is you ------------>", "lel", true)
+      .addField("What I do", "Random Stuff? I guess.")
+      .addField("Am I a good bot?", "no")
+      .setColor(0x00FFFF)
+    message.channel.sendEmbed(embed);
+  }
+
+  if(command === "help") {
+    message.author.sendMessage("```md\n|--------<Commands>--------|\n[1]: help - gives you help menu (this one).\n[2]: 8ball <message> - Replies \"yes\" or \"no\" in response to your question.\n[3]: info - information about the bot.\n[4]: tacos,\n[5]: dumbinfo - gives dumb information that may or may not be helpful.\n[6]: say <message> - says what the player tells the bot to say.\n[7]: apply - Survey just for fun, you don\'t apply to anything.\n[8]: supersuit\n|--------<Commands>-------|``` **Always start your commands with -+**");
+    message.channel.sendMessage("**I just messaged you the commands, go check your direct messages!**");
+  }
+
+  if(command === "dumbinfo") {
+    message.channel.sendMessage(facts[Math.floor(Math.random() * facts.length)]);
+  }
+  
+  if(command === "supersuit") {
+    message.channel.sendMessage(supersuit[Math.floor(Math.random() * supersuit.length)]);
+  }
+  
+  if(command === "apply") {
+    message.channel.sendMessage("**https://goo.gl/forms/KHuSDlTG2QI3t7FG3 \n**Click this link to have fun answering a survey and stuff!**");
+  }
+});
+
+setInterval(() => {
  http.get('http://discordjs-heroku.herokuapp.com');
 }, 900000);
 
 const port = process.env.PORT || 5000;
-
-});
-
 
 client.login(process.env.BOT_TOKEN);
