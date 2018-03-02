@@ -124,7 +124,7 @@ client.on("message", async message => {
 
   if(command === "info") {
     var embed = new Discord.RichEmbed()
-      .setThumbnail(message.client.avatarURL)
+      .setThumbnail(client.avatarURL)
       .addField("What I am", "I am a bot created by: Zandercros12!", true)
       .addField("What I do", "Random Stuff? I guess.")
       .addField("Am I a good bot?", "no")
