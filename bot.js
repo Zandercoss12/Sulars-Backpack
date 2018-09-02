@@ -90,7 +90,7 @@ var facts = [
 ];
   
 client.on('ready', () => {
-  client.user.setPresence({game: {name: "-+help for commands!", type: 4}});
+  client.user.setGame('-+help for commands!', "https://twitch.tv/monstercat");
   console.log('I am ready!');
 });
 
