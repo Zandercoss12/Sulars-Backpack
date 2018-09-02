@@ -90,7 +90,7 @@ var facts = [
 ];
   
 client.on('ready', () => {
-  client.user.setPresence({game: {name: "-+help for commands!", type: "streaming"}});
+  client.user.setPresence({game: {name: "-+help for commands!", type: 2}});
   console.log('I am ready!');
 });
 
